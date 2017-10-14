@@ -14,7 +14,7 @@ Contiene tres archivos:
   
   
 # Dependecies
-* Requiere Google Maps Javascript API
+* Google Maps Javascript API
 
 
 # Credits
