@@ -22,4 +22,5 @@ Contiene tres archivos:
 
 # Credits
 Brad Traversy (https://github.com/bradtraversy)
+https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=1439s
 
