@@ -11,7 +11,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
   <!-- css para que se pueda mostrar el mapa -->
   <link rel="stylesheet" href="style.css">
 
@@ -34,13 +36,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#" style="display:none;">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link disabled" href="#" style="display:none;">Disabled</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" style="display:none;" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="#">Action</a>
@@ -49,19 +51,30 @@
           </div>
         </li>
       </ul>
+      <!--
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2" id="location-query" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+-->
     </div>
   </nav>
 
-    <div class="starter-template jumbotron">
+
+  <div class="row container">
+    <div class="starter-template col-sm-6 col-md-7">
       <h1>Proyecto sismos</h1>
       <!-- pintar mapa en la página -->
       <div id="map"></div>
+      <br>
     </div>
-
+    <div class="col-sm-4">
+      <form class="form-inline my-2 my-lg-0" id="location-form">
+        <input class="form-control mr-sm-2" id="location-input" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
 
   <!-- script para configurar el mapa -->
   <script src="foo.js"></script>
@@ -74,8 +87,9 @@
   </script>
 
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
 </body>
 
 </html>

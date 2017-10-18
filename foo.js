@@ -1,4 +1,15 @@
 // Create map
+var locationForm = document.getElementById('location-form');
+
+// Listen for submit
+locationForm.addEventListener('submit', geocode);
+
+function geocode(e){
+  e.preventDefault();
+	console.log("botonazo");
+	console.log(document.getElementById('location-input').value);
+}
+
 function initMap() {
   // Map options
   var options = {
@@ -8,13 +19,7 @@ function initMap() {
 
   // New map
   var map = new google.maps.Map(document.getElementById('map'), options);
-/*
-  // Listen for click on map
-  google.maps.event.addListener(map, 'click', function (event) {
-    // Add marker
-    addMarker({ coords: event.latLng });
-  });
-*/
+
 
   // Array of markers
   var markers = [
