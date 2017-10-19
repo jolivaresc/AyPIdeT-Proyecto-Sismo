@@ -4,10 +4,29 @@ var locationForm = document.getElementById('location-form');
 // Listen for submit
 locationForm.addEventListener('submit', geocode);
 
-function geocode(e){
-  e.preventDefault();
+function geocode(){
 	console.log("botonazo");
 	console.log(document.getElementById('location-input').value);
+	document.getElementById('ltnlng').innerHTML = document.getElementById('location-input').value;
+	axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+		params:{
+			address:document.getElementById('ltnlng').innerHTML,
+			key:'AIzaSyBL5XV9C6bmq7oct5X0pkLHbEvtVwInQPg'
+			}
+	})
+	.then(function(response){
+		console.log(response);
+		var lat = response.data.results[0].geometry.location.lat;
+        var lng = response.data.results[0].geometry.location.lng;
+        var geometryOutput = `
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
+            <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
+          </ul>
+        `;
+        document.getElementById('ltnlng').innerHTML = geometryOutput;
+	}
+	)
 }
 
 function initMap() {
