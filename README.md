@@ -17,7 +17,10 @@ Contiene tres archivos:
   
   
 # Dependecies
-* Google Maps Javascript API
+* Google Maps Javascript API (13-oct-2017)
+* Google Maps Geocoding API (17-oct-2017)
+* Axios (19-oct-2017)
+ 
 
 
 # Credits
