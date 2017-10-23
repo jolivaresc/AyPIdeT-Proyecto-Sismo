@@ -45,8 +45,9 @@ function initMap() {
   function geocode(e) {
     e.preventDefault();
     console.log("botonazo");
-    console.log(document.getElementById('location-input').value);
-    document.getElementById('ltnlng').innerHTML = document.getElementById('location-input').value;
+    var query_city = document.getElementById('location-input').value;
+    console.log(query_city);
+    document.getElementById('ltnlng').innerHTML = query_city;
     axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
       params: {
         address: document.getElementById('ltnlng').innerHTML,
@@ -58,7 +59,8 @@ function initMap() {
         var lat = response.data.results[0].geometry.location.lat;
         var lng = response.data.results[0].geometry.location.lng;
         var marker = {
-          coords: {lat:lat,lng:lng}
+          coords: {lat:lat,lng:lng},
+          content: '<h>'+query_city+'</h>'
         }
         var geometryOutput = `
           <ul class="list-group">
