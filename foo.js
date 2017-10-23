@@ -55,12 +55,12 @@ function initMap() {
       }
     })
       .then(function (response) {
-        console.log(response);
+        console.log(response.data.results[0].address_components);
         var lat = response.data.results[0].geometry.location.lat;
         var lng = response.data.results[0].geometry.location.lng;
         var marker = {
           coords: {lat:lat,lng:lng},
-          content: '<h>'+query_city+'</h>'
+          content: '<h>' + query_city +'</h>'
         }
         var geometryOutput = `
           <ul class="list-group">
