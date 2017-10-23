@@ -1,38 +1,11 @@
 // Create map
-var locationForm = document.getElementById('location-form');
 
-// Listen for submit
-locationForm.addEventListener('submit', geocode);
 
-function geocode(){
-	console.log("botonazo");
-	console.log(document.getElementById('location-input').value);
-	document.getElementById('ltnlng').innerHTML = document.getElementById('location-input').value;
-	axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
-		params:{
-			address:document.getElementById('ltnlng').innerHTML,
-			key:'AIzaSyBL5XV9C6bmq7oct5X0pkLHbEvtVwInQPg'
-			}
-	})
-	.then(function(response){
-		console.log(response);
-		var lat = response.data.results[0].geometry.location.lat;
-        var lng = response.data.results[0].geometry.location.lng;
-        var geometryOutput = `
-          <ul class="list-group">
-            <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
-            <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
-          </ul>
-        `;
-        document.getElementById('ltnlng').innerHTML = geometryOutput;
-	}
-	)
-}
 
 function initMap() {
   // Map options
   var options = {
-    zoom: 10,
+    zoom: 8,
     center: { lat: 19.4326, lng: -99.1332 }
   }
 
@@ -53,7 +26,7 @@ function initMap() {
     },
     {
       coords: { lat: 19.4352, lng: -99.1412 },
-      content:'<h>Bellas Artes</h>'
+      content: '<h>Bellas Artes</h>'
     }
   ];
 
@@ -62,6 +35,43 @@ function initMap() {
     // Add marker
     addMarker(markers[i]);
   }
+
+  // capturar campo
+  var locationForm = document.getElementById('location-form');
+
+  // Listen for submit
+  locationForm.addEventListener('submit', geocode);
+
+  function geocode(e) {
+    e.preventDefault();
+    console.log("botonazo");
+    console.log(document.getElementById('location-input').value);
+    document.getElementById('ltnlng').innerHTML = document.getElementById('location-input').value;
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: document.getElementById('ltnlng').innerHTML,
+        key: 'AIzaSyBL5XV9C6bmq7oct5X0pkLHbEvtVwInQPg'
+      }
+    })
+      .then(function (response) {
+        console.log(response);
+        var lat = response.data.results[0].geometry.location.lat;
+        var lng = response.data.results[0].geometry.location.lng;
+        var marker = {
+          coords: {lat:lat,lng:lng}
+        }
+        var geometryOutput = `
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
+            <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
+          </ul>
+        `;
+        addMarker(marker);
+        document.getElementById('ltnlng').innerHTML = geometryOutput;
+      }
+      )
+  }
+
 
   // Add Marker Function
   function addMarker(props) {
