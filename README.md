@@ -21,7 +21,8 @@ Contiene tres archivos:
 * Google Maps Geocoding API (17-oct-2017)
 * Axios (19-oct-2017)
  
-
+ ## Filtro
+ Código para filtrar tweets usando una lista de palabras clave. Se obtiene el ID del tweet filtrado para buscarlo después en la BD.
 
 # Credits
 Brad Traversy (https://github.com/bradtraversy)
