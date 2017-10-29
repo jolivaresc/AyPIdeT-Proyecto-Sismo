@@ -3,20 +3,20 @@
 
 # # Dependencies
 
-# In[45]:
+# In[2]:
 
 #!/usr/bin/env python
 
 
-import json
+#import json
 from pymongo import MongoClient
-from nltk.tokenize import TweetTokenizer, word_tokenize
+from nltk.tokenize import TweetTokenizer #, word_tokenize
 #from keras.preprocessing.text import text_to_word_sequence
 
 
 # # Conexión a DB
 
-# In[46]:
+# In[3]:
 
 try:
 	client = MongoClient()
@@ -27,7 +27,7 @@ except pymongo.errors.ConnectionFailure as e:
 
 # # Seleccionar BD y colección
 
-# In[50]:
+# In[4]:
 
 db = client.sept2017_db
 tweets = db.sept2017_collection
@@ -38,17 +38,17 @@ tweets = db.sept2017_collection
 # * `ids`: set para guardar los tweets por id que contengan palabras clave para después hacer consulta a la BD por medio de su ID
 # * `tknzr`: Tokenizador de tweets
 
-# In[51]:
+# In[5]:
 
 filtro = ["sismo", "albergue", "acopio", "víveres", "viveres", "alerta", "sísmica",
-          "sismica", "ayuda", "#Verificado19S","19s","mujer","telcel"]
+          "sismica", "ayuda", "#Verificado19S","19s"]
 ids = set()
 tknzr = TweetTokenizer(preserve_case=False,       # Convertir a minúsculas
                        reduce_len=True,           # Reducir caracteres repetidos
                        strip_handles=False)       # Mostrar @usuarios
 
 
-# In[52]:
+# In[5]:
 
 for i in tweets.find():
     if "retweeted_status" in i:
@@ -67,7 +67,7 @@ for i in tweets.find():
 
 # # Escribir IDs en archivo
 
-# In[44]:
+# In[6]:
 
 ids_file = open('ids.dat', 'w')
 for item in ids:
@@ -76,6 +76,7 @@ ids_file.close()
 
 
 # In[ ]:
-
-
-
+'''
+db.sept2017_collection.find(ObjectId('59e55c2d0e0bab1d2663dff6')).
+forEach(function(tweet){print(tweet.text)})
+'''
