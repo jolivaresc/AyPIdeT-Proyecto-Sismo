@@ -14,15 +14,14 @@ Contiene tres archivos:
 * foo.js
 
   Incluye las funciones para configurar el mapa así como para leer las coordenadas que se van a mostrar. 
-  
-  
+
+## Filtro
+ Código para filtrar tweets usando una lista de palabras clave. Se obtiene el ID del tweet filtrado para buscarlo después en la BD.  
+ 
 # Dependecies
 * Google Maps Javascript API (13-oct-2017)
 * Google Maps Geocoding API (17-oct-2017)
-* Axios (19-oct-2017)
- 
- ## Filtro
- Código para filtrar tweets usando una lista de palabras clave. Se obtiene el ID del tweet filtrado para buscarlo después en la BD.
+* Axios (19-oct-2017) 
 
 # Credits
 Brad Traversy (https://github.com/bradtraversy)
