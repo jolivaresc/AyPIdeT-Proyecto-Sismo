@@ -76,6 +76,7 @@ ids_file.close()
 
 
 # In[ ]:
+
 '''
 db.sept2017_collection.find(ObjectId('59e55c2d0e0bab1d2663dff6')).
 forEach(function(tweet){print(tweet.text)})
