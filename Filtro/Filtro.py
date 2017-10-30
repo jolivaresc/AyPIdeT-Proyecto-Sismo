@@ -41,7 +41,7 @@ tweets = db.sept2017_collection
 # In[5]:
 
 filtro = ["sismo", "albergue", "acopio", "víveres", "viveres", "alerta", "sísmica",
-          "sismica", "ayuda", "#Verificado19S","19s"]
+          "sismica", "ayuda", "#Verificado19S","19s","derrumbe","colecta","#FuerzaMexico"]
 ids = set()
 tknzr = TweetTokenizer(preserve_case=False,       # Convertir a minúsculas
                        reduce_len=True,           # Reducir caracteres repetidos
