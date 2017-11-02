@@ -29,8 +29,11 @@ except pymongo.errors.ConnectionFailure as e:
 
 # In[4]:
 
-db = client.sept2017_db
-tweets = db.sept2017_collection
+my_db = "sept2017_db"
+my_collection = "sept2017_collection"
+
+db = client[my_db]
+tweets = db[my_collection]
 
 
 # # Lista para filtro y tokenización
@@ -76,8 +79,3 @@ ids_file.close()
 
 
 # In[ ]:
-
-'''
-db.sept2017_collection.find(ObjectId('59e55c2d0e0bab1d2663dff6')).
-forEach(function(tweet){print(tweet.text)})
-'''
