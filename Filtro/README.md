@@ -5,6 +5,8 @@
 Cuando se hace una consulta por fecha trae resultados fuera del rango debido al formato con el que vienen los tweets en forma de cadena.
 
 Códigos de prueba:
+
+
     1. `Filtro_por_keywords.py`
 
         Búsqueda por palabras clave.
@@ -14,3 +16,9 @@ Códigos de prueba:
     3. `search_by_id.py`
 
         Búsqueda por ID
+
+
+# Dependencies
+
+* Pymongo
+* NLTK
