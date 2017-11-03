@@ -7,13 +7,15 @@ Cuando se hace una consulta por fecha trae resultados fuera del rango debido al 
 Códigos de prueba:
 
 
-    1. `Filtro_por_keywords.py`
+    1. Filtro_por_keywords.py
 
         Búsqueda por palabras clave.
-    2. `filtro_por_fechas.py`:
+        
+    2. filtro_por_fechas.py:
 
         Incompleto: La consulta por fechas no se realiza correctamente por el formato en que que vienen
-    3. `search_by_id.py`
+
+    3. search_by_id.py
 
         Búsqueda por ID
 
