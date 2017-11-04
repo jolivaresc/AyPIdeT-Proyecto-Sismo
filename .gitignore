@@ -2,4 +2,5 @@
 *.dat
 Reporte.ipynb
 *.png
-Reporte.pdf
+*.pdf
+*.mongo
