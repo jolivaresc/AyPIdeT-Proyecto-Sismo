@@ -8,6 +8,7 @@
 #!/usr/bin/env python
 
 from pymongo import MongoClient
+from datetime import datetime as dt
 
 # # Conexión a DB
 
@@ -25,8 +26,8 @@ except pymongo.errors.ConnectionFailure as e:
 # In[4]:
 
 # Tomar tweets de BD completa
-my_db = "sept2017_db"
-my_collection = "sept2017_collection"
+my_db = "fechasdb"
+my_collection = "fechascoll"
 
 db = client[my_db]
 tweets = db[my_collection]
@@ -41,14 +42,13 @@ tweets_new = db_new.sept19_26_collection
 query = {
             'created_at':
             {
-                #"$gt":"Tue Sep 19 00:00:01 +0000 2017",
-                "$gt":"Tue Sep 19 00:00:05 +0000 2017",
-                #"$lt":"Mon Oct 16 23:59:59 +0000 2017"
-                "$lt":"Tue Sep 26 23:56:09 +0000 2017"
+                "$gte":"Mon Oct 16 2017 11:55:58 GMT-0500 (CDT)",
+                "$lte":"Mon Oct 16 2017 11:56:09 GMT-0500 (CDT)"
             }
         }
 
 for tw in tweets.find(query):
     print(tw["text"],tw["created_at"])
 
-client.close()
+
+# forEach(function(t){print(t.created_at)})
