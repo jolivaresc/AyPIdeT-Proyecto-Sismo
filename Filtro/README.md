@@ -20,7 +20,17 @@ Códigos de prueba:
         Búsqueda por ID
 
 
+# Clustering
+
+```
+NER.ipynb
+```
+Se utiliza este cuaderno para realizar pruebas de clustering usando Gensim.
+
+
 # Dependencies
 
 * Pymongo
 * NLTK
+* Gensim
+
