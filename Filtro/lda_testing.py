@@ -1,8 +1,9 @@
-from nltk.tokenize import RegexpTokenizer
-from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
-from gensim import corpora, models
+from nltk.tokenize import RegexpTokenizer
+
 import gensim
+from gensim import corpora, models
+from stop_words import get_stop_words
 
 tokenizer = RegexpTokenizer(r'\w+')
 
