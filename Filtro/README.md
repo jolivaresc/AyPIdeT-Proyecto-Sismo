@@ -31,4 +31,5 @@ Archivos para realizar pruebas de clustering usando [Gensim](https://radimrehure
 * Pymongo
 * NLTK
 * Gensim
+* [SnowballStemmer](https://programtalk.com/vs2/?source=python/11906/snowball_py/snowballstemmer)
 
