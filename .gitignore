@@ -4,3 +4,4 @@ Reporte.ipynb
 *.png
 *.pdf
 *.mongo
+*.pyc
