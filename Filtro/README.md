@@ -22,10 +22,8 @@ Códigos de prueba:
 
 # Clustering
 
-```
-NER.ipynb
-```
-Se utiliza este cuaderno para realizar pruebas de clustering usando Gensim.
+`NER.ipynb` y  `lda_testing.py`
+Archivos para realizar pruebas de clustering usando [Gensim](https://radimrehurek.com/gensim/).
 
 
 # Dependencies
