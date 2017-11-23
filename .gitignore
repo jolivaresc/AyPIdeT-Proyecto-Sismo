@@ -5,3 +5,4 @@ Reporte.ipynb
 *.pdf
 *.mongo
 *.pyc
+.vscode
