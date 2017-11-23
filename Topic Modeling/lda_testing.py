@@ -5,6 +5,7 @@ import gensim
 from gensim.models.ldamodel import LdaModel
 from gensim import corpora, models
 from stop_words import get_stop_words
+import snowballstemmer
 
 tokenizer = RegexpTokenizer(r'\w+')
 
@@ -16,7 +17,7 @@ tknzr = TweetTokenizer(preserve_case=False,       # Convertir a minúsculas
 en_stop = get_stop_words('es')
 
 # Create p_stemmer of class PorterStemmer
-p_stemmer = PorterStemmer()
+stmmr = snowballstemmer.stemmer('Spanish')
 
 # create sample documents
 
@@ -69,7 +70,7 @@ for i in tweets:
 
 	# stem tokens
 	stemmed_tokens = [i if i.startswith("#") or i.startswith("@")
-                        else p_stemmer.stem(i)
+                   else i
                         for i in stopped_tokens
                         if not i.isdigit()]
 
